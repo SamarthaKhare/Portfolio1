@@ -3,7 +3,7 @@ import { projects } from '../data'
 import ProjectCard from './ProjectCard'
 const Projects = () => {
     return (
-        <section className='py-16 mx-auto max-w-7xl px-8 ml-8' id='projects'>
+        <section className='py-16 mx-auto max-w-7xl px-4' id='projects'>
             <div className='text-3xl border-b border-gray-200 pb-5 text-center sm:text-start '>
                 <h2>Web Creations</h2>
             </div>
