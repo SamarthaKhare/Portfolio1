@@ -11,7 +11,7 @@ const Navbar = () => {
             y: -100,
             duration: 1.5,
             delay: 0.3,
-            // stagger: 0.5,
+            stagger: 0.5,
             yoyo: true,
             ease: "bounce.out"
         })
