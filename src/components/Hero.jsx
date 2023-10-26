@@ -6,7 +6,7 @@ import heroImg from '../assets/hero.svg';
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa'
 const Hero = () => {
     const words = ["Samartha", "A Developer", "A Coder", "A UI-Designer"];
-    const masterTl = gsap.timeline({ repeat: -1, delay: 0.7 });
+    const masterTl = gsap.timeline({ repeat: -1, delay: 0.7,opacity:0 });
     gsap.registerPlugin(TextPlugin);
     useEffect(() => {
         const mainTl = gsap.timeline()
