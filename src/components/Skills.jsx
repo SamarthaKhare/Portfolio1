@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { skills } from '../data'
 import SkillCard from './SkillCard'
 import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/all';
 const Skills = () => {
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
