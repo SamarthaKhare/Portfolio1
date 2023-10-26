@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { projects } from '../data'
 import ProjectCard from './ProjectCard'
 import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/all';
 const Projects = () => {
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
