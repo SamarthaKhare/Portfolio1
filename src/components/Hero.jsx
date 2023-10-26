@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { gsap } from "gsap";
-import { TextPlugin } from 'gsap/TextPlugin';
+import { TextPlugin } from 'gsap/all';
 
 import heroImg from '../assets/hero.svg';
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa'
