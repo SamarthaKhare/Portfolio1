@@ -1,15 +1,23 @@
 import React, { useEffect } from 'react'
 import { gsap } from "gsap";
-import { TextPlugin } from 'gsap/all';
+import { TextPlugin } from 'gsap/TextPlugin';
 
 import heroImg from '../assets/hero.svg';
 import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa'
 const Hero = () => {
-    const words = ["Samartha", "A Developer", "A Coder", "A UI-Designer"];
-    const masterTl = gsap.timeline({ repeat: -1 });
+    const words = ["Samartha", "Developer", "Coder", "UI-Designer"];
+    const masterTl = gsap.timeline({ repeat: -1, delay: 0.7 });
     gsap.registerPlugin(TextPlugin);
     useEffect(() => {
-        gsap.from(["#cursor"], {
+        const mainTl = gsap.timeline()
+        mainTl.from("#heroText", {
+            x: -200,
+            opacity: 0,
+            duration: 1,
+            delay: 0.5,
+            ease: "bounce.out"
+        })
+        mainTl.from(["#cursor"], {
             opacity: 0,
             ease: "Power2.inOut",
             repeat: -1,
@@ -21,7 +29,8 @@ const Hero = () => {
                 const tl = gsap.timeline({ repeat: 1, yoyo: true });
                 tl.to(["#text"], {
                     text: word,
-                    duration: 1
+                    duration: 1,
+                    delay: 0.3
                 })
                 masterTl.add(tl)
             })
@@ -30,21 +39,24 @@ const Hero = () => {
             scale: 0.5,
             opacity: 0,
             duration: 1.5,
-            delay: 1
+            delay: 0.5
         })
+
     }, [])
     return (
         <section className='bg-emerald-100 py-24'>
             <div className=' px-8 grid max-w-7xl mx-auto md:grid-cols-2 items-center gap-x-8 '>
                 <article>
-                    <h1 className='font-bold text-6xl tracking-wide md:text-6xl'>I'm <span id='text'></span><span id='cursor'>_</span></h1>
-                    {/* <p className='text-3xl tracking-wide mt-3 capitalize  text-slate-700'>Front-End Developer</p> */}
-                    <p className='text-xl tracking-wide mt-3 capitalize text-slate-700'>Turning Ideas into Reality</p>
-                    <div className='flex gap-x-4 mt-6'>
-                        <a href="https://github.com/SamarthaKhare"><FaGithubSquare className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
-                        <a href="https://www.linkedin.com/in/samartha-khare-68428b211/"><FaLinkedin className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
-                        <a href="https://www.linkedin.com/in/samartha-khare-68428b211/"><FaTwitterSquare className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
-                    </div>
+                    <article id='heroText'>
+                        <h1 className='font-bold text-6xl tracking-wide md:text-6xl'>I'm <span id='text'></span><span id='cursor'>_</span></h1>
+                        {/* <p className='text-3xl tracking-wide mt-3 capitalize  text-slate-700'>Front-End Developer</p> */}
+                        <p className='text-xl tracking-wide mt-3 capitalize text-slate-700'>Turning Ideas into Reality</p>
+                        <div className='flex gap-x-4 mt-6'>
+                            <a href="https://github.com/SamarthaKhare"><FaGithubSquare className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
+                            <a href="https://www.linkedin.com/in/samartha-khare-68428b211/"><FaLinkedin className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
+                            <a href="https://www.linkedin.com/in/samartha-khare-68428b211/"><FaTwitterSquare className='text-slate-500 h-8 w-8 hover:text-black duration-300' /></a>
+                        </div>
+                    </article>
                 </article>
                 <article className='hidden md:block'>
                     <img src={heroImg} className='h-80 lg:h-96' id='image' />
