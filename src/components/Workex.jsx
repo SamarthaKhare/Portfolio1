@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import aboutImg from '../assets/about.svg'
 import WorkCard from './WorkCard'
 import { gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/all';
 const WorkEx = () => {
     gsap.registerPlugin(ScrollTrigger);
     useEffect(() => {
