@@ -11,8 +11,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 
 // wait until window, stylesheets, images, links, and other media assets are loaded
-window.onload = function () {
-  document.getElementById("root").style.display = "block";
-  // Your code and/or method calls here
+{
+  document.addEventListener("DOMContentLoaded", function (event) {
 
-};
+    // wait until window, stylesheets, images, links, and other media assets are loaded
+    window.onload = function () {
+
+      document.getElementById("root").style.display = "block";
+
+
+    };
+  });
+}
